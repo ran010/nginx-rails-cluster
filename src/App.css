@@ -1,0 +1,194 @@
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #e9e8e4;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body.sidebar-open {
+  overflow: hidden;
+}
+
+/* Font Definitions */
+@font-face {
+  font-family: 'AgencyFB';
+  src: url('./assets/fonts/AGENCYB.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Animations */
+@keyframes fadeOutIn {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes moveUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Layout and Container Styles */
+.shell {
+  max-width: 1268px;
+  padding: 0 34px;
+  margin: 0 auto;
+}
+
+/* Section Styles */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Banner Styles */
+#banner {
+  padding-top: 0;
+}
+
+.banner_slide {
+  background-color: rgb(80, 92, 3);
+  color: white;
+  text-transform: uppercase;
+  height: 58px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.section-entry {
+  max-width: 585px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Scroll and Intro Styles */
+.intro {
+  position: absolute;
+  left: 50%;
+  bottom: 190px;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 1;
+  animation: fadeOutIn 4s ease-in-out 1 forwards;
+}
+
+.intro h1, .intro_title {
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.43;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.intro.show {
+  opacity: 1;
+}
+
+.intro_title {
+  font-size: 20px;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 98px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 2.3s forwards;
+}
+
+.scroll p {
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+
+.arrow {
+  height: 24px;
+  margin: auto;
+  animation: moveUpDown 2s ease-in-out infinite;
+}
+
+/* Header Styles */
+.header {
+  font-family: 'AgencyFB', sans-serif;
+  text-transform: uppercase;
+}
+
+/* Animation Classes */
+.animate {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.animate-slide-in-left {
+  opacity: 0;
+}
+
+.animate-slide-in-left.show {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+/* Slick Slider Styles */
+.slick-dots li {
+  width: 10px !important;
+  height: 10px !important;
+  background: #e9e8e4;
+  border: 1px solid #a5a5a5;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.slick-dots li.slick-active {
+  background: black;
+}
+
+.slick-dots li button:before {
+  top: -5px !important;
+  left: -5px !important;
+  color: transparent !important;
+}
+
+/* Image Slide Styles */
+.image-slide {
+  position: relative;
+  height: 674px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
